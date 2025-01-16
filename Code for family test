@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Arbre Généalogique Interactif</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f9f9f9;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+        }
+
+        .tree {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 30px;
+        }
+
+        .person {
+            text-align: center;
+        }
+
+        .photo-container {
+            position: relative;
+            width: 150px;
+            height: 150px;
+            overflow: hidden;
+            border-radius: 50%;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+
+        .portrait, .full-body {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: opacity 0.3s ease-in-out;
+        }
+
+        .full-body {
+            opacity: 0;
+        }
+
+        .photo-container:hover .portrait {
+            opacity: 0;
+        }
+
+        .photo-container:hover .full-body {
+            opacity: 1;
+        }
+
+        .person p {
+            margin-top: 10px;
+            font-size: 16px;
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body>
+    <div class="tree">
+        <!-- Exemple de personne dans l'arbre -->
+        <div class="person">
+            <div class="photo-container">
+                <img src="portrait1.jpg" alt="Portrait" class="portrait">
+                <img src="full-body1.jpg" alt="Full Body" class="full-body">
+            </div>
+            <p>Nom de la Personne 1</p>
+        </div>
+
+        <div class="person">
+            <div class="photo-container">
+                <img src="portrait2.jpg" alt="Portrait" class="portrait">
+                <img src="full-body2.jpg" alt="Full Body" class="full-body">
+            </div>
+            <p>Nom de la Personne 2</p>
+        </div>
+
+        <div class="person">
+            <div class="photo-container">
+                <img src="portrait3.jpg" alt="Portrait" class="portrait">
+                <img src="full-body3.jpg" alt="Full Body" class="full-body">
+            </div>
+            <p>Nom de la Personne 3</p>
+        </div>
+    </div>
+</body>
+</html>
