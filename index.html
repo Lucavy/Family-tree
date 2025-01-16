@@ -20,6 +20,15 @@
             flex-direction: column;
             align-items: center;
             gap: 30px;
+            position: relative;
+        }
+
+        .generation {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 30px;
+            position: relative;
         }
 
         .person {
@@ -62,33 +71,72 @@
             font-size: 16px;
             font-weight: bold;
         }
+
+        /* Connecteurs de parenté */
+        .line {
+            position: absolute;
+            background-color: #333;
+            z-index: -1;
+        }
+
+        .line.vertical {
+            width: 2px;
+            height: 50px;
+            background-color: #333;
+            top: -25px;
+            left: 50%;
+            transform: translateX(-50%);
+        }
+
+        .line.horizontal {
+            width: calc(100% - 60px);
+            height: 2px;
+            background-color: #333;
+            top: 50%;
+            left: 0;
+        }
     </style>
 </head>
 <body>
     <div class="tree">
-        <!-- Exemple de personne dans l'arbre -->
-        <div class="person">
-            <div class="photo-container">
-                <img src="portrait1.jpg" alt="Portrait" class="portrait">
-                <img src="full-body1.jpg" alt="Full Body" class="full-body">
+        <!-- Groupe parent -->
+        <div class="generation">
+            <div class="person">
+                <div class="photo-container">
+                    <img src="portrait1.jpg" alt="Portrait" class="portrait">
+                    <img src="full-body1.jpg" alt="Full Body" class="full-body">
+                </div>
+                <p>Parent 1</p>
             </div>
-            <p>Nom de la Personne 1</p>
+            <div class="line horizontal"></div>
+            <div class="person">
+                <div class="photo-container">
+                    <img src="portrait2.jpg" alt="Portrait" class="portrait">
+                    <img src="full-body2.jpg" alt="Full Body" class="full-body">
+                </div>
+                <p>Parent 2</p>
+            </div>
         </div>
 
-        <div class="person">
-            <div class="photo-container">
-                <img src="portrait2.jpg" alt="Portrait" class="portrait">
-                <img src="full-body2.jpg" alt="Full Body" class="full-body">
-            </div>
-            <p>Nom de la Personne 2</p>
-        </div>
+        <!-- Lien vertical vers les enfants -->
+        <div class="line vertical"></div>
 
-        <div class="person">
-            <div class="photo-container">
-                <img src="portrait3.jpg" alt="Portrait" class="portrait">
-                <img src="full-body3.jpg" alt="Full Body" class="full-body">
+        <!-- Groupe enfants -->
+        <div class="generation">
+            <div class="person">
+                <div class="photo-container">
+                    <img src="portrait3.jpg" alt="Portrait" class="portrait">
+                    <img src="full-body3.jpg" alt="Full Body" class="full-body">
+                </div>
+                <p>Enfant 1</p>
             </div>
-            <p>Nom de la Personne 3</p>
+            <div class="person">
+                <div class="photo-container">
+                    <img src="portrait4.jpg" alt="Portrait" class="portrait">
+                    <img src="full-body4.jpg" alt="Full Body" class="full-body">
+                </div>
+                <p>Enfant 2</p>
+            </div>
         </div>
     </div>
 </body>
